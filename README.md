@@ -64,7 +64,7 @@ If you wanted to get fancy you could create htaccess rules so that you could vie
 ## Sample appcast.xml
 
 
-The appcast.xml file in this project is a template that you can use. This is the XML file that the PHP script will ultimately be pointing to. 
+The appcast.xml file in this project is a template that you can use. This is the XML file that the PHP script will ultimately be pointing to. I create and modify these by hand and/or my own shell scripts. However, there are a bunch of app out there that can help you create and manage these XML files for you. 
 
 
 ## Tip
