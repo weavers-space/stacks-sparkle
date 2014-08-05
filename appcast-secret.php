@@ -34,9 +34,14 @@ if ( preg_match("/sparkle/i", $_SERVER['HTTP_USER_AGENT']) ) {
 	preg_match('/^(\S+)\/\d/', $_SERVER['HTTP_USER_AGENT'], $matches);
 	$product_name = $matches[1];
 
+	// This is a section that adds the appearance of a random string to the url.
+	// By using this clever users that figure out your URL scheme wont be able to get all your stacks for free.
+	$key = 'my-s3cr3t-k3y';
+	$secret = md5($product_name . $key);
+
 	// The product name will be the actual name of the app
 	// Examples: MyApp.app => MyApp, Dispatch.stack => Dispatch
-	$appcast_url = $base_url .'/'.$product_name.'/appcast.xml';
+	$appcast_url = $base_url .'/'.$product_name.'_'.$secret.'/appcast.xml';
 
 	// Redirect to the appcast url
 	header("Location: ".$appcast_url);
